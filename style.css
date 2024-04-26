@@ -1,0 +1,21 @@
+#lab1{
+    font-size: 40em;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+}
+#btoption{
+    text-align: center;
+}
+.buttons{
+    padding: 20px 40px;
+    border-radius: 5px;
+    font-size: 10em;
+    color: aliceblue;
+    background-color: #220670e0;
+    cursor: pointer;
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.buttons:hover{
+    background-color: aquamarine;
+}
