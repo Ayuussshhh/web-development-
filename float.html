@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Floating Buttons Chat Box</title>
+  <link rel="stylesheet" href="float.css">
+</head>
+<body>
+  <header>
+    <h1>Floating Buttons Chat Box</h1>
+  </header>
+  
+  
+  <!-- Floating buttons -->
+  <div class="floating-buttons">
+    <button id="open-chat-btn" class="btn">Open Chat</button>
+  </div>
+
+  <!-- Chat box -->
+  <div id="chat-box" class="chat-box hidden">
+    <div class="chat-header">
+      <h3>Chat Box</h3>
+      <button id="close-chat-btn" class="close-btn">&times;</button>
+    </div>
+    <div id="chat-messages" class="chat-messages">
+      <!-- Chat messages will be displayed here -->
+    </div>
+    <input type="text" id="chat-message-input" class="chat-message-input" placeholder="Type your message...">
+    <button id="chat-send-btn" class="chat-send-btn">Send</button>
+  </div>
+
+  <script src="float.js"></script>
+</body>
+</html>
