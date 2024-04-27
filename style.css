@@ -1,78 +1,93 @@
-/* Reset some default browser styles */
-body, h1, h2, h3, p, ul, li {
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
+body {
     font-family: Arial, sans-serif;
-  }
-  
-  header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-  }
-  
-  nav ul {
-    list-style: none;
-    text-align: center;
-  }
-  
-  nav ul li {
-    display: inline;
-    margin-right: 20px;
-  }
-  
-  nav ul li a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  section {
-    padding: 50px 0;
-  }
-  
-  #hero {
-    background-image: url('hero-image.jpg');
+    background: linear-gradient(#7f00ff,#e100ff);
+    
     background-size: cover;
     background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: centesr;
+    min-height: 100vh;
+    text-transform: uppercase;
+    
+    
+}
+
+.container {
+    width: 300px;
+    margin: 80px 0;
+    padding: 20px;
+    padding-bottom: -10px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 20px;
+    box-shadow: 8px 7px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    border: 3px solid rgba(225, 225,225,0.3);
+    backdrop-filter: blur(10px);
+    
+    /* left: 160px; */
+    
+   
+
+
+
+}
+
+h2 {
     text-align: center;
-    color: #fff;
-  }
-  
-  .hero-content {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  .btn {
-    display: inline-block;
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-  }
-  
-  .btn:hover {
-    background-color: #555;
-  }
-  
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  .service {
+    font-size:xx-large;
+}
+
+.form-group {
     margin-bottom: 30px;
-  }
-  
-  footer {
-    background-color: #333;
-    color: #fff;
+    
+    
+
+    
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 10px 0;
     text-align: center;
-    padding: 20px 0;
-  }
-  
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 3px;
+    text-transform: uppercase;
+
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+i{
+    position: relative;
+    left: 280px;
+    top: -25px;
+    float: inline-start;
+    
+}
+#pass{
+    text-align: center;
+    text-decoration: none;
+}
+p>a{
+    color: #7f00ff;
+}
