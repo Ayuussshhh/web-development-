@@ -22,7 +22,16 @@
                 <input type="password" id="password"placeholder="PASSWORD" name="password" required>
                 <i class="fa-solid fa-lock"></i>
             </div>
-            <button type="submit">Login</button>
+            <form id="loginForm" action="login_process.php" method="POST">
+          <button type="submit" onclick="submitLoginForm()">Login</button>
+        </form>
+        <script>
+          function submitLoginForm() {
+            document.getElementById("loginForm").submit();
+            window.location.href = "pop.html";
+          }
+        </script>
+      </form>
         </form>
     
         <p id="pass"><input type="checkbox">remember me
