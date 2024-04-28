@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Box</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .chat-box {
+      max-height: 300px;
+      overflow-y: auto;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .message {
+      background-color: #f0f0f0;
+      padding: 8px;
+      margin-bottom: 5px;
+      border-radius: 5px;
+    }
+
+    .message.sent {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    .input-box {
+      display: flex;
+    }
+
+    .input-box input[type="text"] {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+
+    .input-box input[type="submit"] {
+      padding: 8px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="chat-box" id="chatBox">
+    <!-- Chat messages will appear here -->
+  </div>
+  <form id="messageForm">
+    <div class="input-box">
+      <input type="text" id="messageInput" placeholder="Type your message...">
+      <input type="submit" value="Send">
+    </div>
+  </form>
+</div>
+
+<script>
+  const chatBox = document.getElementById('chatBox');
+  const messageForm = document.getElementById('messageForm');
+  const messageInput = document.getElementById('messageInput');
+
+  messageForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const message = messageInput.value.trim();
+    if (message !== '') {
+      appendMessage('You', message, true);
+      processCommand(message);
+      messageInput.value = '';
+      // Scroll to bottom of chat box
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+  });
+
+  function appendMessage(sender, message, isSent) {
+    const messageElement = document.createElement('div');
+    messageElement.classList.add('message');
+    if (isSent) {
+      messageElement.classList.add('sent');
+    }
+    messageElement.innerHTML = `<strong>${sender}:</strong> ${message}`;
+    chatBox.appendChild(messageElement);
+  }
+
+  function receiveMessage(sender, message) {
+    appendMessage(sender, message, false);
+  }
+
+  function processCommand(message) {
+    const lowerCaseMessage = message.toLowerCase();
+    if (lowerCaseMessage.includes('hello')) {
+      receiveMessage('Friend', 'Hello there!');
+    } else if (lowerCaseMessage.includes('how are you')) {
+      receiveMessage('Friend', 'I\'m doing well, thank you!');
+    } else if (lowerCaseMessage.includes('what time is it')) {
+      const currentTime = new Date().toLocaleTimeString();
+      receiveMessage('Friend', `It's currently ${currentTime}.`);
+    } else if (lowerCaseMessage.includes('i like your job')) {
+      receiveMessage('Friend', 'Thank you! I appreciate it.');
+    } else if (lowerCaseMessage.includes('when can i meet you')) {
+      receiveMessage('Friend', 'We can schedule a meeting at your convenience.');
+    } else if (lowerCaseMessage.includes('what\'s your favorite color')) {
+      receiveMessage('Friend', 'I\'m just a computer program, so I don\'t have a favorite color.');
+    }
+  }
+</script>
+
+</body>
+</html>

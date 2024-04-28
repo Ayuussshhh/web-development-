@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time Converter</title>
+  <style>
+    /* Styles for the popup */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      width: 600px; /* Increase the width */
+      padding: 40px; /* Increase the padding */
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+    }
+
+    /* Styles for overlay */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+
+    /* Center the content in the popup */
+    .popup-content {
+      text-align: center;
+    }
+
+    /* Close button style */
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+
+    /* Rest of the styles remain the same as before */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      position: relative; /* Add position relative to body */
+    }
+
+    .description {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Center the button */
+    .button-container {
+      text-align: center;
+    }
+
+    /* Increase button size */
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="description">
+  <h1>Time Converter for Remote Collaboration</h1>
+  <p>Use this time converter to coordinate meetings and collaboration sessions across different time zones. Enter your local time and select the country to find the corresponding time in that location, making remote collaboration easier and more efficient!</p>
+</div>
+
+<!-- Button container -->
+<div class="button-container">
+  <!-- Button to open the popup -->
+  <button onclick="openPopup()">Open Time Converter</button>
+</div>
+
+<!-- Popup -->
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h1>Time Converter</h1>
+    <div class="container">
+      <label for="localTime">Local Time:</label>
+      <input type="text" id="localTime" placeholder="Enter time in HH:MM format">
+      
+      <label for="country">Select Country:</label>
+      <select id="country">
+        <option value="0">Select Country</option>
+        <option value="-12">GMT -12:00 (International Date Line West)</option>
+        <!-- Options omitted for brevity -->
+        <option value="12">GMT +12:00 (Fiji, New Zealand)</option>
+      </select>
+      
+      <button onclick="convertTime()">Convert here</button>
+      
+      <div class="result" id="convertedTime"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openPopup() {
+    document.getElementById("popup").style.display = "block";
+    document.getElementById("overlay").style.display = "block";
+  }
+
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+    document.getElementById("overlay").style.display = "none";
+  }
+
+  function convertTime() {
+    var localTime = document.getElementById("localTime").value;
+    var timeZoneOffset = parseInt(document.getElementById("country").value);
+    var timeComponents = localTime.split(":");
+    var hours = parseInt(timeComponents[0]);
+    var minutes = parseInt(timeComponents[1]);
+
+    // Convert local time to UTC
+    var utcHours = hours + timeZoneOffset;
+    if (utcHours < 0) {
+      utcHours += 24;
+    }
+    else if (utcHours >= 24) {
+      utcHours -= 24;
+    }
+
+    var convertedTime = ("0" + utcHours).slice(-2) + ":" + ("0" + minutes).slice(-2);
+    document.getElementById("convertedTime").innerText = "Converted Time: " + convertedTime;
+  }
+</script>
+
+</body>
+</html>
