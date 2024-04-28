@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      background-color:#66a5ad;
       margin: 0;
       padding: 0;
       display: flex;
@@ -17,14 +17,29 @@
     }
 
     .login-container {
-      background-color: #fff;
+      background-color:#c4dfe6;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       padding: 40px;
       width: 320px;
       text-align: center;
-    }
+      box-shadow: 6px 12px 20px;
+      position:relative;
+      left: 130px ;top: 90px;
 
+    }
+   div.kanchan{
+       height: 70vh;
+       width: 50vw;
+       border: 5px solid white;
+       border-radius: 20px;
+       background: linear-gradient(rgb(104, 177, 173),rgb(44, 95, 116));
+
+       
+
+
+
+   }
     .login-container h2 {
       margin-bottom: 20px;
     }
@@ -40,7 +55,7 @@
     }
 
     .login-container input[type="submit"] {
-      background-color: #4caf50;
+      background-color: #5aa9bd;
       color: #fff;
       padding: 10px 20px;
       border: none;
@@ -50,18 +65,25 @@
     }
 
     .login-container input[type="submit"]:hover {
-      background-color: #45a049;
+      background-color: #cee6f2;
+    }
+    h2{
+      color: white;
+      font-size: x-large;
+      text-transform: uppercase;
     }
   </style>
 </head>
 <body>
-  <div class="login-container">
-    <h2>Login</h2>
-    <form action="login.php" method="post">
-      <input type="text" name="username" placeholder="Username" required>
-      <input type="password" name="password" placeholder="Password" required>
-      <input type="submit" value="Login">
-    </form>
+  <div class="kanchan">
+    <div class="login-container">
+      <h2>Login</h2>
+      <form action="login.php" method="post">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="submit" value="Login">
+      </form>
+    </div>
   </div>
 </body>
 </html>
