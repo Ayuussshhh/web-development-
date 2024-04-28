@@ -1,27 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Video Calling</title>
-    <link rel="stylesheet" href="feedback.css" />
-  </head>
-  <body>
-    <div class="container">
-      <div class="local-video">
-        <h2>You</h2>
-        <video id="localVideo" autoplay muted></video>
-      </div>
-      <div class="remote-video">
-        <h2>Remote User</h2>
-        <video id="remoteVideo" autoplay></video>
-      </div>
-      <div class="controls">
-        <button id="startCallBtn">Start Call</button>
-        <button id="endCallBtn">End Call</button>
-      </div>
-    </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    *{
+        border: 30pt;
+        border-radius: 400px;
+    }
 
-    <script src="feedback.js"></script>
-  </body>
+    /* Styles for the feedback form */
+    .feedback-form {
+      width: 400px;
+      padding: 40px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #333333;
+    }
+
+    .form-group input[type="text"],
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #cccccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-size: 16px;
+      color: #555555;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+    }
+
+    .form-group select {
+      appearance: none;
+      background: transparent;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="black"><path d="M6.9 9.7l-1.4 1.4 6 6c.4.4 1 .4 1.4 0l6-6-1.4-1.4-4.3 4.3v-12.6h-1v12.6z"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-size: 20px;
+    }
+
+    .form-group button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .form-group button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Styles for the confirmation message */
+    .confirmation-message {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #dff0d8;
+      border: 1px solid #c3e6cb;
+      border-radius: 5px;
+      color: #155724;
+      text-align: center;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="feedback-form" id="feedbackForm">
+  <h2 style="text-align: center; margin-bottom: 20px; color: #007bff;">Feedback Form</h2>
+  <div class="form-group">
+    <label for="name" style="color: #007bff;">Your Name:</label>
+    <input type="text" id="name" placeholder="Enter your name">
+  </div>
+  <div class="form-group">
+    <label for="email" style="color: #007bff;">Your Email:</label>
+    <input type="text" id="email" placeholder="Enter your email (optional)">
+  </div>
+  <div class="form-group">
+    <label for="feedbackType" style="color: #007bff;">Feedback Type:</label>
+    <select id="feedbackType">
+      <option value="suggestion">Suggestion</option>
+      <option value="bug">Bug Report</option>
+      <option value="compliment">Compliment</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="message" style="color: #007bff;">Feedback Message:</label>
+    <textarea id="message" rows="5" placeholder="Enter your feedback"></textarea>
+  </div>
+  <button onclick="submitFeedback()">Submit Feedback</button>
+  <div class="confirmation-message" id="confirmationMessage">Thank you for your feedback!</div>
+</div>
+
+<script>
+  function submitFeedback() {
+    // Get form values
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var feedbackType = document.getElementById("feedbackType").value;
+    var message = document.getElementById("message").value;
+
+    // You can add validation here if needed
+
+    // Display confirmation message
+    document.getElementById("confirmationMessage").style.display = "block";
+
+    // Clear form fields
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("feedbackType").selectedIndex = 0;
+    document.getElementById("message").value = "";
+
+    // You can send the form data to your server using AJAX or other methods for further processing
+  }
+</script>
+
+</body>
 </html>
