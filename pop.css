@@ -536,3 +536,91 @@ a{
 .dropdown__menu a:hover {
     background-color: #555;
 }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#signupButton:hover {
+  background-color: #ff8533;
+}
+
+span{
+  font-size: 20px;
+}
+
+background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  footer p {
+    margin-bottom: 10px;
+  }
+  
+  #signupButton {
+    background-color: #ff6600;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  background-color: #f9f9f9;
+    border-radius: 8px;
+  }
+  
+  .feature h2 {
+    color: #333;
+  }
+
+  header {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .features-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px auto;
+    max-width: 1200px;
+  }
+  
+  .feature {
+    width: 30%;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+  }
+  
+  .feature h2 {
+    color: #333;
+  }
+  
+  .feature p {
+    color: #666;
+  }
+  
+  .feature-image {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+  }
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  footer p {
+    margin-bottom: 10px;
+  }
