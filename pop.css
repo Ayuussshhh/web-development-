@@ -504,7 +504,7 @@ a{
  .dropdown {
     position: absolute;
     top: 100%;
-    left: 750px;
+    left: auto;
     background-color: #333;
     display: none; /* Hide dropdown by default */
     z-index: 1;
