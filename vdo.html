@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Calling</title>
+  <link rel="stylesheet" href="vdo.css">
+</head>
+<body>
+  <div class="container">
+    <div class="local-video">
+      <h2>You</h2>
+      <video id="localVideo" autoplay muted></video>
+    </div>
+    <div class="remote-video">
+      <h2>Remote User</h2>
+      <video id="remoteVideo" autoplay></video>
+    </div>
+    <div class="controls">
+      <button id="startCallBtn">Start Call</button>
+      <button id="endCallBtn">End Call</button>
+    </div>
+  </div>
+
+  <script src="vdo.js"></script>
+</body>
+</html>
