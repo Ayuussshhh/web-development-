@@ -70,6 +70,7 @@ a {
   left: 0;
   background-color: var(--black-color);
   z-index: var(--z-fixed);
+	font-size: 2em;
 }
 
 .nav {
